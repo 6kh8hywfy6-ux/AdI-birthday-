@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday ADI! 🦋</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0f0c29;
+            background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Particles / Falling Effects */
+        #particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            top: -10%;
+            font-size: 1.5rem;
+            animation: fall linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Glassmorphism Container with RGB Glowing Border */
+        .container {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            animation: rgb-glow 5s linear infinite;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        @keyframes rgb-glow {
+            0%, 100% { border: 2px solid #ff0000; box-shadow: 0 0 20px #ff0000, inset 0 0 10px #ff0000; }
+            25% { border: 2px solid #00ff00; box-shadow: 0 0 20px #00ff00, inset 0 0 10px #00ff00; }
+            50% { border: 2px solid #0000ff; box-shadow: 0 0 20px #0000ff, inset 0 0 10px #0000ff; }
+            75% { border: 2px solid #ff00ff; box-shadow: 0 0 20px #ff00ff, inset 0 0 10px #ff00ff; }
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Buttons and Navigation */
+        .nav-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            color: #fff;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover, .btn.active {
+            background: #fff;
+            color: #000;
+            box-shadow: 0 0 15px #fff;
+            transform: scale(1.05);
+        }
+
+        /* Pages / Sections */
+        .page-content {
+            display: none;
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .page-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Theme Switcher */
+        .controls {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+        
+        .controls select {
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: #222;
+            color: #fff;
+            border: 1px solid #ff00ff;
+            outline: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Heart pulsing for the last page */
+        .pulse-heart {
+            color: #ff4d4d;
+            animation: pulse 1s infinite;
+            display: inline-block;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.8rem; }
+            .btn { font-size: 0.8rem; padding: 8px 15px; }
+            .container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Falling particles background -->
+    <div id="particles"></div>
+
+    <div class="container">
+        <h1>Happy Birthday, ADI! <span class="pulse-heart">❤️</span></h1>
+        <p>Welcome to your special Butterfly Queen Birthday Website!</p>
+
+        <!-- Navigation for the 4 Notes -->
+        <div class="nav-buttons">
+            <button class="btn active" onclick="showPage('page1')">Our Bond</button>
+            <button class="btn" onclick="showPage('page2')">My Prayers</button>
+            <button class="btn" onclick="showPage('page3')">Always Together</button>
+            <button class="btn" onclick="showPage('page4')">To My Bestie</button>
+        </div>
+
+        <!-- Page 1: Our Bond -->
+        <div id="page1" class="page-content active">
+            <h2>✨ Our Unbreakable Bond</h2><br>
+            <p>To my dearest ADI, from the moment we became friends, my life got so much brighter. You are not just a friend to me; you are my chosen family. We've shared so many laughs, secrets, and beautiful moments. Your smile lights up every room, and your presence brings peace to my heart. Here is to celebrating the amazing person you are today! 🌸</p>
+        </div>
+
+        <!-- Page 2: Prayers -->
+        <div id="page2" class="page-content">
+            <h2>🤲 My Prayers For You</h2><br>
+            <p>On this beautiful day, I pray to Allah that all your dreams come true. May your life be filled with endless joy, massive success, and perfect health. I pray that every tear that falls from your eyes is only a tear of happiness. May you be protected from every sorrow and always surrounded by people who love you as much as I do. Ameen! 🦋</p>
+        </div>
+
+        <!-- Page 3: Always By Your Side -->
+        <div id="page3" class="page-content">
+            <h2>🤝 Always By Your Side</h2><br>
+            <p>Life can be a rollercoaster, ADI, but no matter where life takes us, remember that I will ALWAYS have your back. Through every up and down, every dark night and bright morning, I will be standing right beside you holding your hand. You never have to face anything alone as long as I am alive. We are a team, forever. ❄️</p>
+        </div>
+
+        <!-- Page 4: Bestie Tease -->
+        <div id="page4" class="page-content">
+            <h2>💖 To My True Best Friend</h2><br>
+            <p>Okay, let's get real for a second... You are absolutely my favorite person to annoy! 😂 You might be a little crazy, totally dramatic, and definitely weird... but guess what? You are MY weirdo, and I wouldn't trade you for the world! Have the happiest birthday, you beautiful idiot. Now go cut the cake before I eat it all! Love you endlessly! <span class="pulse-heart">❤️</span>🎉</p>
+        </div>
+
+        <!-- Particle Switcher -->
+        <div class="controls">
+            <select id="particle-selector" onchange="changeParticles()">
+                <option value="🌸">🌸 Flower Petals</option>
+                <option value="🦋">🦋 Butterflies</option>
+                <option value="❄️">❄️ Snowflakes</option>
+                <option value="💖">💖 Glowing Hearts</option>
+                <option value="✨">✨ Magic Sparkles</option>
+            </select>
+        </div>
+    </div>
+
+    <script>
+        // Tab Navigation Logic
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+
+        // Particle System Logic
+        let particleInterval;
+        let currentSymbol = '🌸';
+
+        function createParticle() {
+            const particleContainer = document.getElementById('particles');
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.innerText = currentSymbol;
+            
+            // Randomize position, size, and animation duration
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.fontSize = (Math.random() * 1.5 + 0.5) + 'rem';
+            particle.style.animationDuration = (Math.random() * 3 + 4) + 's'; // Between 4s and 7s
+            
+            particleContainer.appendChild(particle);
+
+            // Remove particle after it falls down (7 seconds)
+            setTimeout(() => {
+                particle.remove();
+            }, 7000);
+        }
+
+        function changeParticles() {
+            const selector = document.getElementById('particle-selector');
+            currentSymbol = selector.value;
+            
+            // Clear existing particles instantly for a clean switch
+            document.getElementById('particles').innerHTML = '';
+        }
+
+        // Start creating particles
+        function startParticles() {
+            clearInterval(particleInterval);
+            particleInterval = setInterval(createParticle, 300); // Create a new particle every 300ms
+        }
+
+        // Initialize particles on load
+        window.onload = startParticles;
+    </script>
+</body>
+</html>
